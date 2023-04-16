@@ -1,0 +1,1 @@
+var cocina = prompt("¿De cual pais deseas probar tu comida; colombia, ecuador o peru?")
