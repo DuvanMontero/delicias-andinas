@@ -37,3 +37,10 @@ let valorCuenta = total;
     }
 }
 }while(loop) 
+
+const antojos = ["🍕","🥐","🍩"]
+console.log(antojos)
+antojos.push("🍨","🎂")
+antojos.unshift("👵")
+antojos.shift()
+antojos.pop()
