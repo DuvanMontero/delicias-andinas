@@ -3,27 +3,47 @@
 let saludo = alert ("Bienvenidos a las delicias Andinas")
 let alergias = confirm ("¿Eres alergic@ a algun alimento?")
         const alergiasRespuesta = []
+        const colombia = ["Ajiaco", "Bandeja Paisa", "Muchacho Relleno", "Lechona", "Tamal tolimense"]
+        const ecuador = ["Encebollado", "Locro de papa", "Cuy asado", "Churrasco ecuatoriano", "Mote pillo"]
+        const peru = ["Causa limeña", "Pachamanca", "Ají de gallina", "Tacu tacu", "Arroz chaufa"]
         let cantidad = 3;
- if (alergias){
+        function detectarAlergias(){
+     if (alergias){
     do{
         let queIngrediente = prompt("¿A cual alimento eres alergic@?");
         alergiasRespuesta.push(queIngrediente.toUpperCase());
         console.log(alergiasRespuesta);
     } while (alergiasRespuesta.length != cantidad)
    } alert ("Gracias por hacernos saber, las tendremos en cuenta")
-   let cocina = prompt("¿De cual pais deseas probar tu comida; colombia, ecuador o peru?")
-   function bebidas (){
-    prompt ("Delicioso!.¿Que deseas de beber?")
-   }
-   function platillo (){
+}
+function elegirPais (){
+   let pais = prompt("¿De cual pais deseas probar tu comida; colombia, ecuador o peru?").toLocaleLowerCase()
+    while (!(pais === "colombia" || pais === "ecuador" || pais === "peru")){
+  pais = prompt("Por favor ingrese una opcion del menu. \n¿De cual pais deseas probar tu comida; Colombia, Ecuador o Peru?").toLocaleLowerCase() 
+}
+  return pais
+} 
+   function platillo (pais){
+    let platos = []
+    switch(pais){
+        case "colombia":
+            platos = colombia
+            break
+        case "ecuador":
+            platos = ecuador
+            break
+        case "peru":
+        platos = peru
+        break
+        default:
+            console.log("Pais inesperado")  
+    }
+
+
+
     alert ("😋Que Rico!😋") 
    }
-    const colombia = ["Ajiaco", "Bandeja Paisa", "Muchacho Relleno", "Lechona", "Tamal tolimense"]
-
-    const peru = ["Causa limeña", "Pachamanca", "Ají de gallina", "Tacu tacu", "Arroz chaufa"]
     (colombia.includes ("Ajiaco", "Bandeja Paisa", "Muchacho Relleno", "Lechona", "Tamal tolimense") || ecuador.includes ("Encebollado", "Locro de papa", "Cuy asado", "Churrasco ecuatoriano", "Mote pillo") || peru.includes ("Causa limeña", "Pachamanca", "Ají de gallina", "Tacu tacu", "Arroz chaufa") )
-
-    const ecuador = ["Encebollado", "Locro de papa", "Cuy asado", "Churrasco ecuatoriano", "Mote pillo"]
     let loop = true
     let invalidChoiceCount = 3;
 do{
@@ -57,5 +77,9 @@ let valorCuenta = total;
 // antojos.unshift("👵")
 // antojos.shift()
 // antojos.pop()
+
+// function bebidas (){
+//     prompt ("Delicioso!.¿Que deseas de beber?")
+//    }
 
 // (colombia.includes ("Ajiaco", "Bandeja Paisa", "Muchacho Relleno", "Lechona", "Tamal tolimense") || ecuador.includes ("Encebollado", "Locro de papa", "Cuy asado", "Churrasco ecuatoriano", "Mote pillo") || peru.includes ("Causa limeña", "Pachamanca", "Ají de gallina", "Tacu tacu", "Arroz chaufa") )
