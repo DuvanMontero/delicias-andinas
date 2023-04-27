@@ -8,14 +8,16 @@ let alergias = confirm ("¿Eres alergic@ a algun alimento?")
         const peru = ["Causa limeña", "Pachamanca", "Ají de gallina", "Tacu tacu", "Arroz chaufa"]
         let cantidad = 3;
         function detectarAlergias(){
-     if (alergias){
-    do{
-        let queIngrediente = prompt("¿A cual alimento eres alergic@?");
-        alergiasRespuesta.push(queIngrediente.toUpperCase());
-        console.log(alergiasRespuesta);
-    } while (alergiasRespuesta.length != cantidad)
-   } alert ("Gracias por hacernos saber, las tendremos en cuenta")
-}
+            function detectarAlergias() {
+                if (alergias) {
+                  for (let i = 0; i < cantidad; i++) {
+                    let queIngrediente = prompt("¿A cuál alimento eres alérgico?");
+                    alergiasRespuesta.push(queIngrediente.toUpperCase());
+                  }
+                  alert("Gracias por hacernos saber. Las tendremos en cuenta.");
+                }
+              }
+            }              
 function elegirPais (){
    let pais = prompt("¿De cual pais deseas probar tu comida; colombia, ecuador o peru?").toLocaleLowerCase()
     while (!(pais === "colombia" || pais === "ecuador" || pais === "peru")){
@@ -59,6 +61,9 @@ return platoDeseado
    function bebidas (){
       let bebidaElegida =  prompt ("Delicioso!.¿Que deseas de beber?")
        return bebidaElegida
+    }
+    function app(){
+        detectarBedidas()
     }
 function app(){
     detectarAlergias()
